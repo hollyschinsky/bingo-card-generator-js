@@ -87,7 +87,7 @@ addOnUISdk.ready.then(() => {
   
     // Generate button handler
     generateBtn.onclick = async (event) => {                    
-      generateBingoCard();        
+      generateBingoCard();              
     };
   
     /* Enable the generate button now that the SDK is ready and the button event handler has been registered. The add to page button should only be enabled once a card has been generated. */
@@ -96,7 +96,7 @@ addOnUISdk.ready.then(() => {
 
 // Function to generate the bingo card using an HTML canvas and drawing context 
 function generateBingoCard() {
-    const canvas = document.getElementById("finalCard");
+    const canvas = document.getElementById("bingoCanvas");
     const ctx = canvas.getContext("2d");
 
     // Set canvas width and height
@@ -114,7 +114,7 @@ function generateBingoCard() {
     ctx.fillStyle = bgColorPicker.value; 
     for (let x = gridlineSize/2; x <= canvas.width; x += cellWidth-gridlineSize) {            
         for (let y = gridlineSize/2; y <= canvas.height; y += cellHeight-gridlineSize) {
-            ctx.fillRect(x, y, cellWidth-gridlineSize, cellHeight-gridlineSize);                
+            ctx.fillRect(x, y, cellWidth, cellHeight);                
         }
     } 
     
@@ -170,6 +170,7 @@ function generateBingoCard() {
                     continue; // Skip the FREE space
                 }
             }
+
             let num;
             do {
                 num = Math.floor(Math.random() * 15) + 1 + (j * 15);
