@@ -5,15 +5,16 @@
         <meta name="description" content="Get started with Add-on development using JavaScript" />
         <meta name="keywords" content="Adobe, Express, Add-On, JavaScript" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Get Started</title>
+        <title>Bingo Card Generator</title>
         <style>
             sp-theme {
                 margin: 0 var(--spectrum-global-dimension-static-size-100);
                 display: grid;
             }
 
-            h2 {
-                font-weight: var(--spectrum-global-font-weight-black);
+            h3 {
+                font-weight: var(--spectrum-global-font-weight-thin);
+                /* font-weight: var(--spectrum-global-font-weight-black); */
             }
             
             sp-swatch {
@@ -85,12 +86,9 @@
             }
         </style>
     </head>
-    <body>
-        <!-- 
-            Please note that this document does not use the spectrum web components theme for Express.
-            You may use "addOnUISdk.app.ui.theme" to get the current theme and style accordingly.
-        -->
+    <body>        
         <sp-theme scale="medium" color="light" theme="express">
+            <h3>Customize a bingo card with the settings below:</h3>
             <div class="row gap-20"> 
                 <div class="column">
                     <sp-field-label for="bgColorSwatch" size="m">Background color</sp-field-label>
